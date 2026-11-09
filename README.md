@@ -1,24 +1,31 @@
 # GitAdventure
 
-A small, playable top-down RPG for desktop, written in C with SDL2. Help the village elder, collect three glowing herbs, defeat the slime, and return to the elder to complete the quest. The game draws its pixel-style graphics and text itself, so no extra assets are needed.
+GitAdventure is a small desktop action RPG prototype built in C with SDL2. It expands from a single village into a larger adventure with multiple areas, quests, monsters, a minimap, and stronger visual polish.
+
+## Features
+
+- Multiple areas: village, forest, and cave
+- Quest chain: talk to the elder, gather herbs, defeat monsters, clear the cave guardian
+- Enemy variety with different behavior and health
+- Minimap to show your position and the map layout
+- Custom pixel-style text and simple hand-drawn visual style
+- Desktop window app with keyboard controls
 
 ## Requirements
 
-- C compiler (C11)
+- C compiler with C11 support
 - SDL2 development libraries
-- CMake 3.16+ (or Make and `pkg-config`)
+- CMake 3.16+ (or use the Makefile if you prefer)
 
-### Install dependencies
+## macOS setup
 
-- macOS with Homebrew: `brew install cmake sdl2`
-- Debian/Ubuntu: `sudo apt install build-essential cmake libsdl2-dev`
-- Windows: install SDL2 development libraries from [libsdl.org](https://www.libsdl.org/) and configure CMake to find them.
+```bash
+brew install cmake sdl2
+```
 
 ## Build and run
 
-First clone the repository, then run these commands from inside the `GitAdventure` folder:
-
-```sh
+```bash
 git clone https://github.com/jaimehargrave-cpu/GitAdventure.git
 cd GitAdventure
 cmake -S . -B build
@@ -26,19 +33,12 @@ cmake --build build
 ./build/gitadventure
 ```
 
-If you already cloned it, just open Terminal in that folder and run the last three commands. Check your current folder with `pwd`; it should end in `/GitAdventure`. `CMakeLists.txt` is in the repository root.
+## Controls
 
-On macOS, if CMake cannot find SDL2, run `brew install sdl2` and retry. With Make and `pkg-config`, you can also run `make` then `./gitadventure`.
+- Move: WASD or arrow keys
+- Interact: E
+- Attack: Space
+- Restart after win/lose: R
+- Quit: Escape
 
-## How to play
-
-1. Walk up to the elder and press **E** to accept the quest.
-2. Explore the village and press **E** beside each glowing herb to collect it. The HUD tracks your progress.
-3. Find the slime and press **Space** while facing it and close by to attack. Avoid touching it or you will lose health.
-4. Return to the elder and press **E** to finish the quest.
-
-- Move: **WASD** or arrow keys
-- Interact / collect: **E**
-- Attack: **Space**
-- Restart after winning or losing: **R**
-- Quit: **Esc**
+The game does not use external assets; all visuals are generated in code.
